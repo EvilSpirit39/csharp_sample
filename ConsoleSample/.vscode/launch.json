@@ -12,7 +12,7 @@
       "program": "${workspaceFolder}/bin/Debug/net5.0/ConsoleSample.dll",
       "args": [],
       "cwd": "${workspaceFolder}",
-      "console": "internalConsole",
+      "console": "integratedTerminal", // コンソールの場合はここが重要。こうすることでターミナルを利用した入出力が可能に
       "stopAtEntry": false
     },
     {

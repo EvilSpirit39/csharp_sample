@@ -9,3 +9,6 @@ C#のサンプルコード用
 
 `dotnet run` で実行
 
+# コンソールプロジェクトのVS Code デバッグ設定
+
+`launch.json` の `console` プロパティを `integratedTerminal` にすることで、ターミナルを利用した入出力が可能となる。
