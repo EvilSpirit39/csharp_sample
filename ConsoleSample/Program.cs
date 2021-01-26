@@ -9,6 +9,7 @@ namespace ConsoleTest
         public static void Main(string[] args)
         {
             CommentSample.Run();
+            VariableSample.Run();
 
             // コンソール出力
             Console.WriteLine("Your Name? ");
