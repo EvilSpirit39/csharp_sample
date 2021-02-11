@@ -10,6 +10,7 @@ namespace ConsoleTest
         {
             CommentSample.Run();
             VariableSample.Run();
+            OperatorSample.Run();
 
             // コンソール出力
             Console.WriteLine("Your Name? ");
