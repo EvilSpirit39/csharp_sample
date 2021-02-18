@@ -13,6 +13,7 @@ namespace ConsoleTest
             OperatorSample.Run();
             ControllSample.Run();
             StringSample.Run();
+            RegexSample.Run();
 
             // コンソール出力
             Console.WriteLine("Your Name? ");
