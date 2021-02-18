@@ -12,6 +12,7 @@ namespace ConsoleTest
             VariableSample.Run();
             OperatorSample.Run();
             ControllSample.Run();
+            StringSample.Run();
 
             // コンソール出力
             Console.WriteLine("Your Name? ");
