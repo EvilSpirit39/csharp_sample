@@ -18,6 +18,7 @@ namespace ConsoleTest
             FileSample.Run();
             MathSample.Run();
             BigNumSample.Run();
+            ArrayFuncSample.Run();
 
             // コンソール出力
             Console.WriteLine("Your Name? ");
