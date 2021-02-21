@@ -16,6 +16,7 @@ namespace ConsoleTest
             RegexSample.Run();
             DateSample.Run();
             FileSample.Run();
+            MathSample.Run();
 
             // コンソール出力
             Console.WriteLine("Your Name? ");
