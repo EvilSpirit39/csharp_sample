@@ -1,6 +1,9 @@
 ﻿// 名前空間を利用する
 using System;
 
+// = で名前空間にエイリアスを付けられる
+using AnoNs = AnotherNSSample;
+
 // 名前空間に含める
 namespace ConsoleTest
 {
@@ -20,6 +23,9 @@ namespace ConsoleTest
             BigNumSample.Run();
             ArrayFuncSample.Run();
             CollectionSample.Run();
+            ClassSample.Run();
+            AnoNs::SampleClass.Hello();
+            EnumSample.Run();
 
             // コンソール出力
             Console.WriteLine("Your Name? ");
