@@ -143,6 +143,15 @@ namespace ConsoleTest {
       Console.WriteLine($"{struct1.X}, {struct1.Y}, {struct2.X}, {struct2.Y}");
 
       PartialClass.Test();
+
+      // object型は何でも入れられる
+      object o1 = 100;
+      object o2 = "abc";
+
+      Console.WriteLine($"Object.Equals: {o1.Equals(o2)}");
+      Console.WriteLine($"Object.GetHashCode: {o1.GetHashCode()}");
+      Console.WriteLine($"Object.GetType: {o1.GetType()}");
+      Console.WriteLine($"Object.ToString: {o1.ToString()}");
     }
   }
 
