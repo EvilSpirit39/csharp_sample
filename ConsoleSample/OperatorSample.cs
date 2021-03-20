@@ -3,11 +3,14 @@ using System;
 using System.Text;
 using System.Linq;
 
-namespace ConsoleTest {
+namespace ConsoleTest
+{
 
-  class OperatorSample {
+  class OperatorSample
+  {
 
-    public static void Run() {
+    public static void Run()
+    {
       // 演算子サンプル
       Console.WriteLine("9 + 4 = {0}", 9 + 4);
       Console.WriteLine("9 - 4 = {0}", 9 - 4);
@@ -35,23 +38,29 @@ namespace ConsoleTest {
       Console.WriteLine("3d / 4 = {0}", 3d / 4);
       // ゼロ除算
       int zero = 0;
-      try {
+      try
+      {
         Console.WriteLine("3 / 0 = {0}", 3 / zero);
-      } catch (DivideByZeroException e) {
+      }
+      catch (DivideByZeroException e)
+      {
         Console.WriteLine(e);
       }
-      try {
+      try
+      {
         Console.WriteLine("3 % 0 = {0}", 3 % zero);
-      } catch (DivideByZeroException e) {
+      }
+      catch (DivideByZeroException e)
+      {
         Console.WriteLine(e);
       }
       Console.WriteLine("3d / 0 = {0}", 3d / 0);
       Console.WriteLine("3d % 0 = {0}", 3d % 0);
 
       // 浮動小数点誤差
-      Console.WriteLine("Math.Floor((0.7 + 0.1) * 10): {0}" , Math.Floor((0.7 + 0.1) * 10));
+      Console.WriteLine("Math.Floor((0.7 + 0.1) * 10): {0}", Math.Floor((0.7 + 0.1) * 10));
       Console.WriteLine("0.2 * 3 == 0.6: {0}", 0.2 * 3 == 0.6);
-      Console.WriteLine("Math.Floor((0.7M + 0.1M) * 10): {0}" , Math.Floor((0.7M + 0.1M) * 10));
+      Console.WriteLine("Math.Floor((0.7M + 0.1M) * 10): {0}", Math.Floor((0.7M + 0.1M) * 10));
       Console.WriteLine("0.2M * 3 == 0.6M: {0}", 0.2M * 3 == 0.6M);
 
       // 代入
@@ -84,7 +93,7 @@ namespace ConsoleTest {
       var val2 = val1;
       val2 += 5;
       Console.WriteLine("val1: {0}, val2: {1}", val1, val2);
-      var arr1 = new int[]{10};
+      var arr1 = new int[] { 10 };
       var arr2 = arr1;
       arr2[0] += 5;
       Console.WriteLine("arr1[0]: {0}, arr2[0]: {1}", arr1[0], arr2[0]);
@@ -106,7 +115,7 @@ namespace ConsoleTest {
       Console.WriteLine("compare by Equals: {0}", builder1.Equals(builder2));
 
       // SequenceEqual
-      Console.WriteLine("SequenceEqual Test: {0}", (new int[]{1, 2, 3}).SequenceEqual(new int[]{1, 2, 3}));
+      Console.WriteLine("SequenceEqual Test: {0}", (new int[] { 1, 2, 3 }).SequenceEqual(new int[] { 1, 2, 3 }));
 
       // 論理演算子
       Console.WriteLine("true && false: {0}", true && false);
@@ -117,19 +126,28 @@ namespace ConsoleTest {
       // 短絡演算
       string str1 = null;
       // && だと短絡評価される
-      if (str1 != null && str1.StartsWith("abc")) {
+      if (str1 != null && str1.StartsWith("abc"))
+      {
         // 通らない 
-      } else {
+      }
+      else
+      {
         Console.WriteLine("not starts with abc");
       }
-      try {
+      try
+      {
         // & だと短絡評価されない
-        if (str1 != null & str1.StartsWith("abc")) {
+        if (str1 != null & str1.StartsWith("abc"))
+        {
           // 通らない 
-        } else {
+        }
+        else
+        {
           // こちらも通らない
         }
-      } catch (NullReferenceException e) {
+      }
+      catch (NullReferenceException e)
+      {
         // 例外になる
         Console.WriteLine("null reference exception", e);
       }
@@ -148,6 +166,39 @@ namespace ConsoleTest {
       Console.WriteLine("sizeof(decimal): {0}", sizeof(decimal));
 
       Console.WriteLine("nameof(Console): {0}", nameof(Console));
+
+      // 演算子のオーバーロード
+      var p1 = new Point { X = 10, Y = 100};
+      var p2 = new Point { X = 3, Y = 5};
+      var pResult = p1 + p2;
+      Console.WriteLine($"{pResult.X} {pResult.Y}");
+      if (p1) {
+        Console.WriteLine("True!");
+      }
+    }
+
+    class Point
+    {
+
+      public int X { get; set; }
+
+      public int Y { get; set; }
+
+      // オーバーロードすれば、自作の型に演算子を定義できる
+      public static Point operator + (Point a, Point b) {
+        return new Point {
+          X = a.X + b.X,
+          Y = a.Y + b.Y,
+        };
+      }
+
+      public static bool operator true (Point p) {
+        return p.X != 0 ||  p.Y != 0;
+      }
+
+      public static bool operator false (Point p) {
+        return p.X == 0 && p.Y == 0;
+      }
     }
 
   }
