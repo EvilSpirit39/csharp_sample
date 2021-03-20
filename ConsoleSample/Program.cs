@@ -27,6 +27,7 @@ namespace ConsoleTest
             AnoNs::SampleClass.Hello();
             EnumSample.Run();
             GenericSample.Run();
+            DelegateSample.Run();
 
             // コンソール出力
             Console.WriteLine("Your Name? ");
