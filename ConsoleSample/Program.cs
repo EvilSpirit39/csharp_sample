@@ -28,6 +28,7 @@ namespace ConsoleTest
             EnumSample.Run();
             GenericSample.Run();
             DelegateSample.Run();
+            LambdaSample.Run();
 
             // コンソール出力
             Console.WriteLine("Your Name? ");
