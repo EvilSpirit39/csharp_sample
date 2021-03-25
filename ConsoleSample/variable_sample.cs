@@ -190,6 +190,13 @@ namespace ConsoleTest
       jagArray[2] = new int[]{7, 8, 9};
       Console.WriteLine("jagArray [0][0]: {0}, [0][1]: {1}, [1][0]: {2}", jagArray[0][0], jagArray[0][1], jagArray[1][0]);
 
+      // dynamic型: 動的型付けが可能な型
+      dynamic dynamicVar;
+
+      dynamicVar = "abc";
+      Console.WriteLine($"{dynamicVar} {dynamicVar.Length}");
+      dynamicVar = DateTime.Now;
+      Console.WriteLine($"{dynamicVar} {dynamicVar.Year}");
     }
   }
 }
