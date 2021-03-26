@@ -29,6 +29,7 @@ namespace ConsoleTest
             GenericSample.Run();
             DelegateSample.Run();
             LambdaSample.Run();
+            JsonSample.Run();
 
             // コンソール出力
             Console.WriteLine("Your Name? ");
