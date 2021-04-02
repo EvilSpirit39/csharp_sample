@@ -30,6 +30,7 @@ namespace ConsoleTest
             DelegateSample.Run();
             LambdaSample.Run();
             JsonSample.Run();
+            EventSample.Run();
 
             // コンソール出力
             Console.WriteLine("Your Name? ");
